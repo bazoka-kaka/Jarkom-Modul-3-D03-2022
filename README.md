@@ -598,8 +598,6 @@ dan lakukan <code>service squid restart</code>
 
 ### 11. client hanya dapat mengakses domain loid-work.com dan franky-work.com (IP tujuan domain dibebaskan). Saat akses internet dibuka, client dilarang untuk mengakses web tanpa HTTPS. (Contoh web HTTP: http://example.com)
 
-    ==============================================
-
 <strong>WISE</strong>
 
 <code>nano /etc/bind/named.conf.local</code> dan masukan
