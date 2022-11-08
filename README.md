@@ -55,7 +55,6 @@ auto eth3
     iface eth3 inet static
     address 192.185.3.1
     netmask 255.255.255.0
-
 ```
 
 SSS
@@ -138,7 +137,7 @@ iface eth0 inet static
     gateway 192.185.3.1
 ```
 
-### /root/.bashrc
+#### /root/.bashrc
 
 a. Ostania (DHCP Relay (2))
 
@@ -447,10 +446,10 @@ option routers 192.185.2.1;
 " > /etc/dhcp/dhcpd.conf
 ```
 
-nano /etc/dhcp/dhcpd.conf
+<code>nano /etc/dhcp/dhcpd.conf</code>
 
 pada line ke 17 masukan tanda petik “ sebelum dan sesudah example.org (“example.org”)
-dan lakukan service isc-dhcp-server restart
+dan lakukan <code>service isc-dhcp-server restart</code>
 
 ### 5. Client mendapatkan DNS dari WISE dan client dapat terhubung dengan internet melalui DNS tersebut
 
