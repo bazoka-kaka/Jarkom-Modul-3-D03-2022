@@ -142,59 +142,59 @@ iface eth0 inet static
 a. Ostania (DHCP Relay (2))
 
 ```
-> iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.185.0.0/16
-> cat /etc/resolv.conf
-> echo 'nameserver 192.168.122.1' > /etc/resolv.conf # opsional
-> apt-get update
+$ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.185.0.0/16
+$ cat /etc/resolv.conf
+$ echo 'nameserver 192.168.122.1' > /etc/resolv.conf
+$ apt-get update
 ```
 
 b. Westalis (DHCP Server)
 
 ```
-> echo ‘nameserver 192.168.122.1 > /etc/
-> resolv.conf
-> apt-get update
+$ echo ‘nameserver 192.168.122.1 > /etc/
+$ resolv.conf
+$ apt-get update
 ```
 
 c. Berlint (Proxy Server (1))
 
 ```
-> echo ‘nameserver 192.168.122.1’ > /etc/
-> resolv.conf
-> apt-get update
+$ echo ‘nameserver 192.168.122.1’ > /etc/
+$ resolv.conf
+$ apt-get update
 ```
 
 d. Wise (DNS Server)
 
 ```
-> echo ‘nameserver 192.168.122.1’ > /etc/
-> resolv.conf
-> apt-get update
+$ echo ‘nameserver 192.168.122.1’ > /etc/
+$ resolv.conf
+$ apt-get update
 ```
 
 e. Eden (Web Server)
 
 ```
-> echo ‘nameserver 192.168.122.1’ > /etc/
-> resolv.conf
-> apt-get update
+$ echo ‘nameserver 192.168.122.1’ > /etc/
+$ resolv.conf
+$ apt-get update
 ```
 
 ### 1. Wise (DNS Server)
 
 ```
-> apt-get update
-> apt-get install bind9 -y
-> service bind9 start
-> service bind9 status
+$ apt-get update
+$ apt-get install bind9 -y
+$ service bind9 start
+$ service bind9 status
 ```
 
 Westalis (DHCP Server)
 
 ```
-> apt-get update
-> apt-get install isc-dhcp-server -y
-> nano /etc/default/isc-dhcp-server
+$ apt-get update
+$ apt-get install isc-dhcp-server -y
+$ nano /etc/default/isc-dhcp-server
 ```
 
 dan tambahkan
@@ -203,18 +203,18 @@ dan tambahkan
 Berlint (Proxy Server)
 
 ```
-> apt-get update
-> apt-get install squid -y
-> service squid start
-> service squid status
+$ apt-get update
+$ apt-get install squid -y
+$ service squid start
+$ service squid status
 ```
 
 ### 2. Ostania (DHCP Relay)
 
 ```
-> apt-get update
-> apt-get install isc-dhcp-relay -y
-> nano /etc/default/isc-dhcp-relay
+$ apt-get update
+$ apt-get install isc-dhcp-relay -y
+$ nano /etc/default/isc-dhcp-relay
 ```
 
 dan isi
@@ -522,19 +522,19 @@ Note: Sebelum melakukan konfigurasi proxy pada client, server proxy harus dikonf
 Konfigurasi Client Proxy SSS
 
 ```
-> export http_proxy="http://192.185.2.3:8080"
+$ export http_proxy="http://192.185.2.3:8080"
 ```
 
 Konfigurasi Client Proxy Garden
 
 ```
-> export http_proxy="http://192.185.2.3:8080"
+$ export http_proxy="http://192.185.2.3:8080"
 ```
 
 Konfigurasi Client Proxy Eden
 
 ```
-> export http_proxy="http://192.185.2.3:8080"
+$ export http_proxy="http://192.185.2.3:8080"
 ```
 
 ### 9. Jadikan Berlint sebagai Proxy Server sehingga dapat mengakses internet.
@@ -554,13 +554,13 @@ service squid status
 9.2.1 backup file config default squid
 
 ```
-> mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
+$ mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
 ```
 
 9.2.2 buat konfigurasi squid baru pada file /etc/squid/squid.conf pada file config baru dengan command
 
 ```
-> nano /etc/squid/squid.conf
+$ nano /etc/squid/squid.conf
 ```
 
 masukkan script:
@@ -570,10 +570,10 @@ http_port 8080
 visible_hostname Berlint
 ```
 
-9.3 restart squid
+9.2.3 restart squid
 
 ```
-> service squid restart
+$ service squid restart
 ```
 
 ### 10. Client hanya dapat mengakses internet di luar hari dan jam kerja (senin-jumat 08:00 - 17:00) dan hari libur (dapat mengakses 24 jam penuh)
