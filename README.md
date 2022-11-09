@@ -209,7 +209,7 @@ Berlint (Proxy Server)
 > service squid status
 ```
 
-Ostania (DHCP Relay)
+### 2. Ostania (DHCP Relay)
 
 ```
 > apt-get update
